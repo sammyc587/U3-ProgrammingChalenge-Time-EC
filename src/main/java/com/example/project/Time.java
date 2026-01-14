@@ -57,19 +57,16 @@ public class Time{
         second += time2.second;
         if (second >= 60){
             minute += second/60;
-            second = 0;
+            second %= 60;
         }
         minute += time2.minute;
         if (minute >= 60){
             hour += minute/60;
-            minute = 0;
+            minute %= 60;
         }
         hour += time2.hour;
-        if (hour >= 24){
-            hour = 0;
-            minute = 0;
-            second = 0;
-        }
+            hour %= 24;
+        
     }
 }
 
